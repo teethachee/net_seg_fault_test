@@ -1,0 +1,7 @@
+obj
+bin
+out
+build
+
+*.so
+*.dll
