@@ -19,6 +19,13 @@ docker build . \
     --target runtime \
     --tag "segv_test:$net_ver"
 
+echo ""
+echo "Running segv_test w/o installing glog signal handler"
 docker run "segv_test:$net_ver"
+echo "Exit code: $?"
 
+echo ""
+echo ""
+echo "Running segv_test w/ installing glog signal handler"
+docker run -e INSTALL_FAILURE_HANDLER="1" "segv_test:$net_ver"
 echo "Exit code: $?"

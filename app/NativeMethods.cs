@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 
 namespace MyConsoleApp
@@ -17,7 +18,11 @@ namespace MyConsoleApp
 
         static NativeMethods()
         {
-            install_failure_handler();
+            var value = Environment.GetEnvironmentVariable("INSTALL_FAILURE_HANDLER");
+            if (value != null)
+            {
+                install_failure_handler();
+            }
         }
     }
 }
