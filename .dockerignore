@@ -1,0 +1,10 @@
+# Ignore by default, include specifics
+*
+
+!CMakeLists.txt
+!build.sh
+!lib/*.cpp
+!include/*.h
+!app/*.cs
+!app/*.csproj
+
