@@ -1,7 +1,11 @@
 #define DLL_EXPORT
 #include "foo.h"
 
+#include <glog/logging.h>
+
 #include <iostream>
+
+
 
 #ifdef _MSC_VER
 __declspec(noinline) void dereference_nullptr(int count_down)
@@ -20,6 +24,12 @@ void __attribute__ ((noinline)) dereference_nullptr(int count_down)
     // boom
     int* ptr = nullptr;
     *ptr = 1;
+}
+
+extern "C" EXPORT void install_failure_handler()
+{
+    std::cout << "Install failure handler" << std::endl;
+    google::InstallFailureSignalHandler();
 }
 
 extern "C" EXPORT void foo()

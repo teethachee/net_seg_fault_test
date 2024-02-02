@@ -1,5 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
 
-NativeMethods.foo();
-NativeMethods.foo_malicious();
+namespace MyConsoleApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+
+            NativeMethods.foo();
+            NativeMethods.foo_malicious();
+        }
+    }
+}

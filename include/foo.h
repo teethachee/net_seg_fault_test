@@ -13,3 +13,4 @@
 extern "C" EXPORT void foo();
 extern "C" EXPORT void foo_malicious();
 
+extern "C" EXPORT void install_failure_handler();
